@@ -1,0 +1,183 @@
+
+.project-detail-page {
+    .container {
+        .slide-bar {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+            h2{
+                position: relative;
+                padding-left: 15px;
+                padding-right: 15px;
+                display: flex;
+                align-items: center;
+            }
+            h2 {
+                max-width: 66.666666%;
+                flex: 0 0 66.666666%;
+                min-height: 1px;
+                font-family: pr;
+                font-size: 14px;
+                color: #171717;
+                text-transform: uppercase;
+            }
+
+            .full-screen, .back-to-all {
+                max-width: 16.666666%;
+                flex: 0 0 16.666666%;
+                min-height: 1px;
+                p{
+                    font-family: pr;
+                    font-size: 14px;
+                    color: #171717;
+                    text-transform: uppercase;
+                    padding-left: 15px;
+                }
+                img:hover{
+                    animation: shake 0.5s;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+        .images{
+            margin: 40px 0;
+        }
+        .contents{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+            &__item{
+                position: relative;
+                padding: 0 15px;
+                min-height: 1px;
+                &.first-item{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    p:nth-child(2){
+                        padding-right: 30%;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        color: $text-cl;
+                        text-transform: initial;
+                    }
+                }
+                &.second-item, &.third-item{
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+                &.third-item{
+                    p:not(:first-child){
+                        margin: 5px 0;
+                    }
+                }
+                p{
+                    font-family: pr;
+                    font-size: $fz-text;
+                    color: $text-cl;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+                span{
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    color: $text-cl;
+                    text-transform: initial;
+                }
+            }
+
+        }
+    }
+}
+@media (max-width: $sm-max){
+.project-detail-page{
+    .container{
+        .slide-bar{
+            h2{
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            .full-screen, .back-to-all{
+                flex: 0 0 25%;
+                max-width: 25%;
+                p{
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+}
+
+@media (max-width: $xs-max){
+    .project-detail-page{
+        .container{
+            .slide-bar{
+                h2, .full-screen, .back-to-all{
+                    flex: 0 0 33.333333%;
+                    max-width: 33.333333%;
+                    p{
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $xxs-max){
+    .project-detail-page{
+        .container{
+            .slide-bar{
+                h2 {
+                    flex: 0 0 58.333333%;
+                    max-width: 58.333333%;
+                    font-size: 12px;
+                }
+                .back-to-all{
+                    flex: 0 0 41.666666%;
+                    max-width: 41.666666%;  
+                }
+                .back-to-all p{
+                    padding-left: 0;
+                    font-size: 12px;
+                }
+                .back-to-all img{
+                    width: 10px;
+                }
+                .full-screen{
+                    display: none;
+                }
+            }
+            .images{
+                margin: 20px 0;
+            }
+            .contents{
+                display: grid;
+                grid-row: 3;
+                grid-column: 1;
+                &__item{
+                    margin-top: 30px;
+                    max-width: 100% !important;
+                    p{
+                        font-size: 12px;
+                        margin: 10px 0;
+                    }
+                    span{
+                        font-size: 10px;
+                    }
+                    &.first-item{
+                        grid-area: 2/1/3/2;
+                        p:nth-child(2){
+                            font-size: 10px;
+                            padding: 0;
+                        }
+                    }
+                    &.second-item{
+                        grid-area: 1/1/2/2;
+                    }
+                }
+            }
+        }
+    }
+}

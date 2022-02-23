@@ -1,0 +1,261 @@
+// CSS HOMEPAGE
+.gallery-page {
+    padding-top: 145px;
+    .about {
+        padding-top: 75px;
+        padding-bottom: 30px;
+        background: url(../img/gallery-background-top.jpg) no-repeat center;
+        background-size: cover;
+        &__wellcome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-family: pr;
+                font-size: $fz-text;
+                color: $yellow-cl;
+                line-height: 1.5;
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        &__title {
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h2 {
+                font-family: pb;
+                font-size: 20px;
+                color: $yellow-cl;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+        }
+        &__gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h2 {
+                font-family: pb;
+                font-size: $fz-text;
+                color: #ebebeb;
+                line-height: 1.5;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+        }
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: $fz-text-m;
+                color: #ebebeb;
+                max-width: 800px;
+                text-align: center;
+                &:after {
+                    content: "";
+                    width: 33.333333%;
+                    height: 1px;
+                    background: $yellow-cl;
+                    display: block;
+                    margin: 50px 33.333333%;
+                }
+            }
+        }
+    }
+    .gallery{
+        padding-bottom: 75px;
+        background-color: #19191a;
+        .container  {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 20px;
+            column-gap: 20px;
+            .gallery__item {
+                &:nth-child(1) {
+                    grid-area: 1/1/3/2;
+                }
+                &:nth-child(2) {
+                    grid-area: 1/2/2/4;
+                }
+                &:nth-child(3) {
+                    grid-area: 2/2/3/3;
+                }
+                &:nth-child(4) {
+                    grid-area: 2/3/3/4;
+                }
+            }
+            .gallery__item{
+                position: relative;
+                &-imagine{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    overflow: hidden;
+                    transition: all 0.5s;
+                    &:hover{
+                        filter: brightness(50%);
+                        -webkit-filter: brightness(50%);
+                        -moz-filter: brightness(50%);
+                        transition: all 0.5s;
+                    }
+                }
+                &-fullscreen{
+                    position: absolute;
+                    left: 15px;
+                    bottom: 15px;
+                    display: flex;
+                    align-items: flex-end;
+                    p{
+                        margin-left: 10px;
+                        color: #fff;
+                        font-size: $fz-text;
+                    }
+                    &:hover{
+                        img{
+                            animation: shake 0.5s;
+                            animation-iteration-count: infinite;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .career{
+        padding-top: 50px;
+        padding-bottom: 30px;
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .title{
+                font-size: $fz-text;
+            }
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: $fz-text-m;
+                color: #000;
+                text-align: center;
+                padding: 10px 300px;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+.popup-img{
+    position: fixed;
+    .bottonnav{
+        cursor: pointer;
+        display: none;
+        width: 50px;
+        height: 30px;
+        position: relative;
+        
+        span{
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            @include transition($t);
+            &:nth-child(1){
+                margin-top: 0px;
+                transform-origin: left center;
+            }
+            &:nth-child(2){
+                margin-top: 13px;
+                transform-origin: left center;
+            }
+            &:nth-child(3){
+                margin-top: 13px;
+                transform-origin: left center;
+            }
+             }
+        &.active{
+            span{
+            &:nth-child(1){
+            transform: rotate(45deg) translate(0px, -2px);
+            @include transition($t);
+            }
+            &:nth-child(2){
+            width: 0px;
+            opacity: 0;
+            }
+            &:nth-child(3){
+                @include transition($t);
+                transform: rotate(-45deg) translate(0px, 2px);
+            }
+        }
+    }
+    }
+}
+@media (max-width: $sm-max) {
+    .gallery-page {
+        .about{
+            &__content{
+                p{
+                    max-width: 550px;
+                }
+            }
+        }
+        .career{
+            .container{
+                p{
+                    padding: 10px 168px;
+                }
+            }
+        }
+
+    }
+}
+@media (max-width: $xs-max) {
+    .gallery-page {
+        .gallery{
+            .container{
+                display: block;
+                align-items: center;
+                justify-content: center;
+                .gallery__item{
+                    margin-bottom: 30px;
+                    &-fullscreen{
+                        img{
+                            width: 20px;
+                        }
+                        p{
+                            font-size: $fz-text-m;
+                        }
+                    }
+                }
+            }
+        }
+        .career{
+            padding-top: 30px;
+            padding-bottom: 0;
+            .container{
+                p{
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}
+@media (max-width: $xxs-max) {
+    .main-wrapper {
+        padding-top: 10px;
+        margin-top: 50px;
+    }
+    .gallery-page {
+        .about {
+            &__content {
+                display: none;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,27 @@
+/* Core variables and mixins*/
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/core/mixins";
+@import "imports/core/layouts";
+@import "imports/core/elements";
+@import "imports/core/components";
+@import "imports/core/libs";
+@import "imports/core/loading";
+@import "imports/core/cursor";
+
+/* Navigation, header, footer*/
+@import "imports/core/header";
+@import "imports/core/nav";
+@import "imports/core/footer";
+
+/* Pages*/
+@import "imports/pages/home";
+@import "imports/pages/aboutus";
+@import "imports/pages/detail";
+@import "imports/pages/project-detail";
+@import "imports/pages/studios";
+@import "imports/pages/studio-detail";
+@import "imports/pages/rental";
+@import "imports/pages/gallery";
+@import "imports/pages/allwork";
+@import "imports/pages/contact";

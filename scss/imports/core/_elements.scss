@@ -1,0 +1,26 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+}
+.back-to-all, .full-screen, .plan-button{
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i{
+        width: 15px;
+        height: 15px;
+    }
+    p{
+        font-family: pr;
+        font-size: 14px;
+        color: #171717;
+        padding-left: 15px;
+    }
+    img:hover{
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
+}

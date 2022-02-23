@@ -1,0 +1,40 @@
+
+.cmn-cursor {
+    display: none;
+    background-color: skyblue;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: normal;
+}
+.cmn-cursor.is-active {
+    display: block;
+}
+.cmn-cursor.is-hover{
+    mix-blend-mode: difference;
+}
+.cmn-cursor__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+    border-radius: 50%;
+    transform: scale(1);
+}
+html{
+    cursor: none !important;
+}
+a, label, img{
+    cursor: none;   
+}
+@media (max-width: $xs-max){
+    .cmn-cursor.is-active{
+        // display: none;
+    }
+}

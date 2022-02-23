@@ -1,0 +1,186 @@
+// css components
+.work {
+    &__navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            padding: 20px;
+            a {
+                padding: 20px;
+                color: $text-black-cl;
+                font-family: pb;
+                font-size: $fz-text;
+            }
+            &.active {
+                a {
+                    color: $yellow-cl;
+                }
+            }
+        }
+    }
+    &__projects {
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            .item-image {
+                height: 200px;
+                -webkit-transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+                transform: scale3d(1, 1, 1);
+                img {
+                    height: 100%;
+                }
+                &:hover {
+                    transform: scale3d(1.1, 1.1, 1.1);
+                    -webkit-transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+                    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+                    -webkit-box-shadow: 2px 0px 10px 2px rgba(66, 66, 66, 0.5);
+                    box-shadow: 2px 0px 10px 2px rgba(66, 66, 66, 0.5);
+                }
+            }
+            // 200 200 135 100
+            .item-title {
+                margin-top: 50px;
+                a {
+                    padding: 20px;
+                    font-family: pb;
+                    font-size: $fz-text;
+                    color: $text-black-cl;
+                    text-transform: uppercase;
+                }
+                &:after {
+                    content: "";
+                    width: 15px;
+                    height: 2px;
+                    background: $yellow-cl;
+                    margin: 10px auto;
+                    display: block;
+                }
+            }
+            .item-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    margin: 5px;
+                }
+            }
+        }
+        .all-works-button {
+            // cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            a {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: $fz-text-m;
+                color: $text-cl;
+                padding: 20px;
+            }
+            img {
+                width: 10px;
+                transform: translateY(0);
+                transition: all 0.5s;
+            }
+            &:hover {
+                img {
+                    animation: shake 0.5s;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+    }
+}
+.book-now{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a{
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+        background: #525355;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        span{
+            font-family: pb;
+            color: $yellow-cl;
+            font-size: 24px;
+        }
+        &:hover{
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+@media (max-width: $sm-max) {
+    .work {
+        &__projects {
+            &-item {
+                .item-image {
+                    height: 135px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xs-max) {
+    .work {
+        &__projects {
+            &-item {
+                .item-image {
+                    height: 100px;
+                }
+                .item-title {
+                    margin-top: 30px;
+                }
+                .item-content {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xxs-max) {
+    .work {
+        &__projects {
+            &-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 50px;
+                .item-image {
+                    height: 100%;
+                }
+            }
+            #grid-1 {
+                display: none;
+            }
+            .mb-70 {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .book-now{
+        margin-bottom: 50px;
+    }
+}

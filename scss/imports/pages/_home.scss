@@ -1,0 +1,90 @@
+// CSS HOMEPAGE
+.main-wrapper{
+    padding-top: 220px; 
+}
+.homepage {
+    padding-top: 220px;
+    .container {
+        .about {
+            &__wellcome {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-family: pr;
+                    font-size: $fz-text;
+                    color: $text-black-cl;
+                    line-height: 1.5;
+                    text-transform: uppercase;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            &__title {
+                margin: 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h2 {
+                    font-family: pb;
+                    font-size: 20px;
+                    color: $text-black-cl;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    background-color: $yellow-cl;
+                }
+            }
+            &__content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: $fz-text-m;
+                    color: $text-black-cl;
+                    max-width: 800px;
+                    text-align: center;
+                    &:after {
+                        content: "";
+                        width: 33.333333%;
+                        height: 1px;
+                        background: black;
+                        display: block;
+                        margin: 50px 33.333333%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $sm-max) {
+    .homepage {
+        .container {
+
+        }
+    }
+}
+@media (max-width: $xs-max) {
+    .homepage {
+        .container {
+
+        }
+    }
+}
+@media (max-width: $xxs-max) {
+    .main-wrapper{
+        padding-top: 50px;
+        margin-top: 50px;
+    }
+    .homepage {
+        .container {
+            .about {
+                &__content {
+                    display: none;
+                }
+            }
+        }
+    }
+}

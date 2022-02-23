@@ -1,0 +1,66 @@
+.aboutus-page{
+    padding-top: 145px;
+    .container-fluid{
+        padding-left: 15%;
+        position: relative;
+        background: url(../img/background-x.png) no-repeat center;
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 75px;
+        .title{
+            p{
+                font-family: pb;
+                font-size: 36px;
+                color: $yellow-cl;
+                line-height: 1.75;
+                letter-spacing: 20px;
+            }
+        }
+        .content{
+            max-width: 90%;
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: $fz-text;
+                // color: #e4e4e4;
+                color: #ffffff;
+                line-height: 2.5;
+            }
+        }
+        .book-now{
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            a{
+                margin-top: 0;
+                margin-right: 20px;
+                background-color: $yellow-cl;
+                span{
+                    color: #000;
+                }
+            }
+            p{
+                color: #e4e4e4;
+            }
+        }
+    }
+}
+
+@media (max-width: $xxs-max){
+    .aboutus-page{
+        background: url(../img/background-x-mobile.png) no-repeat center;
+        background-size: cover;
+        .container-fluid{
+            background: none;
+            .title{
+                p{
+                    font-size: 28px;
+                }
+            }
+            .content{
+                p{
+                    font-size: $fz-text-m;
+                }
+            }
+        }
+    }
+}

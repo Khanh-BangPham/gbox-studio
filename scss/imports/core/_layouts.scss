@@ -1,0 +1,135 @@
+@-ms-viewport {
+    width: device-width;
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+//8.333333% 16.666666% 25% 33.333333% 41,666666% 50%
+//58.333333% 66.666666% 75%  83.333333% 91,666666% 100%
+}
+html,
+body {
+    --pd-70: 70px;
+    --pd-80: 80px;
+    width: auto;
+    height: auto;
+    max-width: $container-max-width;
+    margin: auto;
+    @include text($fz-text, $font-main, $lh-text, $text-cl, none);
+    background: $main-bg-cl;
+    behavior: smooth;
+    position: relative;
+    @include customscroll();
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .container-fluid {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .no-gap > .col,
+    .no-gap > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    @media (min-width: $xxs-min) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: $xs-min) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: $sm-min) {
+        .container {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: $md-min) {
+        .container {
+            max-width: $container-width;
+        }
+    }
+
+    .mainwrapper {
+        width: 100%;
+        margin: auto;
+    }
+    @include lg {
+        // CSS responsive large desktop
+    }
+    @include md {
+        // CSS responsive desktop
+    }
+    @include sm {
+        // CSS responsive tablet
+    }
+    @include xs {
+        // CSS responsive mobile
+    }
+    @include xxs {
+        // CSS responsive small mobile
+    }
+}
+.pt-70{
+    padding-top: 70px;
+  }
+  .pt-80{
+    padding-top: 80px;
+  }
+  .pt-10{
+    padding-top: 10px;
+  }
+  .pd-10{
+    padding: 10px;
+  }
+  .mb-70{
+    margin-bottom: 70px;
+  }
+  b{
+    font-weight: bold;
+  }
+  i{
+    font-style: italic;
+  }
